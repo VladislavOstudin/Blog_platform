@@ -5,6 +5,8 @@ export default function App() {
     <main>
       <h1>Blog platform</h1>
       <h3>Blog platform</h3>
+      <h3>Blog platform</h3>
+      <h3>Blog platform</h3>
     </main>
   )
 }
