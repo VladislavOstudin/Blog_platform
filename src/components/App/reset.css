@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Roboto:wght@400;700&family=Titillium+Web&display=swap');
+
+main {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 1rem;
+  padding-top: 2rem;
+}
+
+/* 1. Убираем отступы и padding у всех элементов */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2. Наследуем шрифт и задаём высоту строки */
+html, body {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 3. Убираем стили списков */
+ul, ol {
+  list-style: none;
+}
+
+/* 4. Убираем подчеркивания у ссылок по умолчанию */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 5. Удаляем обводку у кнопок/инпутов по умолчанию */
+button, input, textarea, select {
+  font: inherit;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+/* 6. У кнопок убираем стандартный стиль */
+button {
+  cursor: pointer;
+  background-color: transparent;
+}
+
+/* 7. Сделаем изображения блочными */
+img, picture {
+  display: block;
+  max-width: 100%;
+}
