@@ -7,5 +7,5 @@ export default function App() {
       <h2>Blog platform</h2>
       <h3>Blog platform</h3>
     </main>
-  );
+  )
 }
