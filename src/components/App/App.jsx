@@ -6,10 +6,12 @@ export default function App() {
     <main>
       <h1>Blog platform</h1>
       <h3>Blog platform</h3>
+      <h3>Blog platform</h3>
+      <h3>Blog platform</h3>
       <ul>
-        <li>1q</li>
-        <li>2a</li>
-        <li>3z</li>
+        <li>1q1</li>
+        <li>2a2</li>
+        <li>3z3</li>
       </ul>
     </main>
   )
