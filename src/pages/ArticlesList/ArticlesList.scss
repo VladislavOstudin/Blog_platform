@@ -1,0 +1,39 @@
+.custom_pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+  
+    .ant-pagination-item {
+      border: none;
+      background: transparent;
+      font-size: 16px;
+      color: #333;
+  
+      &:hover {
+        color: #1890FF;
+      }
+    }
+  
+    .ant-pagination-item-active a {
+      background-color: #1890FF;
+      border-radius: 5px;
+      color: white;
+      font-weight: 500;
+    }
+  
+    .ant-pagination-prev,
+    .ant-pagination-next {
+      .ant-pagination-item-link {
+        border: none;
+        color: black;
+  
+        &:hover {
+          color: #1890FF;
+        }
+      }
+    }
+  
+    .ant-pagination-disabled .ant-pagination-item-link {
+      color: #ccc;
+    }
+  }
