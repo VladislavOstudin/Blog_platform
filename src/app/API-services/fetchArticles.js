@@ -14,7 +14,6 @@ export const fetchArticles =
     try {
       const response = await axios.get(`${API_BASE_URL}/articles?limit=${limit}&offset=${offset}`)
       dispatch(getArticles(response.data))
-      // console.log('Все статьи:', response.data)
     } catch (err) {
       dispatch(setError('Ошибка при получении статей'))
     }

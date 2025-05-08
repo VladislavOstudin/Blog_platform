@@ -11,19 +11,30 @@
 .name {
     font-size: 1.1em;
     white-space: nowrap;
+    color: rgba($color: #000000, $alpha: 0.85);
+}
+
+.name:hover {
+    opacity: 0.5;
 }
 
 .button_block {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     gap: 20px;
     width: 100%;
+}
+
+.button_block button:hover {
+    opacity: 0.5;
 }
 
 .sign_in {
     width: 100px;
     height: 50px;
     font-size: 1.1em;
+    color: rgba($color: #000000, $alpha: 0.85);
 }
 
 .sign_up {
@@ -32,5 +43,46 @@
     font-size: 1.1em;
     color: #52C41A;
     border: 1px solid #52C41A;
+    border-radius: 5px;
+}
+
+.create_article {
+    width: 120px;
+    height: 36px;
+    font-size: 1em;
+    color: #52C41A;
+    border: 1px solid #52C41A;
+    border-radius: 5px;
+}
+
+.user {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+
+.user_name {
+    font-size: 1.2em;
+    color: rgba($color: #000000, $alpha: 0.85);
+}
+
+.user_name:hover {
+    opacity: 0.5;
+}
+
+.user_photo {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.log_out {
+    width: 100px;
+    height: 50px;
+    font-size: 1.1em;
+    color: rgba($color: #000000, $alpha: 0.75);
+    border: 1px solid rgba($color: #000000, $alpha: 0.75);
     border-radius: 5px;
 }

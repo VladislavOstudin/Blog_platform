@@ -19,7 +19,7 @@ export default function Article() {
         setArticle(data)
         setError(null)
       } catch (err) {
-        setError('Не удалось загрузить статью')
+        setError('Failed to load article')
       } finally {
         setLoading(false)
       }
@@ -34,7 +34,7 @@ export default function Article() {
         <>
           <Flex align="center" gap="middle">
             <Spin size="large" />
-            <span>Идет загрузка...</span>
+            <span>Loading...</span>
           </Flex>
         </>
       )}

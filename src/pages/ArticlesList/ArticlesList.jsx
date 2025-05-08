@@ -7,7 +7,7 @@ import ArticleItem from '../../components/ArticleItem/ArticleItem'
 import { fetchArticles } from '../../app/API-services/fetchArticles'
 
 import cls from './ArticlesList.module.scss'
-import './ArticlesList.scss'
+import './CustomPagination.scss'
 
 export default function ArticlesList() {
   const dispatch = useDispatch()
@@ -28,7 +28,7 @@ export default function ArticlesList() {
       {loading && (
         <Flex align="center" gap="middle">
           <Spin size="large" />
-          <span>Идет загрузка...</span>
+          <span>Loading...</span>
         </Flex>
       )}
       {error && (
