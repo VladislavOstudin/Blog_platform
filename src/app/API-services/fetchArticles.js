@@ -1,7 +1,5 @@
-import axios from 'axios'
+import apiClient from './apiClient'
 import { setLoading, getArticles, setError } from '../artReducer'
-
-const API_BASE_URL = 'https://blog-platform.kata.academy/api'
 
 export const fetchArticles =
   (page = 1) =>
@@ -12,7 +10,7 @@ export const fetchArticles =
     dispatch(setLoading())
 
     try {
-      const response = await axios.get(`${API_BASE_URL}/articles?limit=${limit}&offset=${offset}`)
+      const response = await apiClient.get(`/articles?limit=${limit}&offset=${offset}`)
       dispatch(getArticles(response.data))
     } catch (err) {
       dispatch(setError('Ошибка при получении статей'))

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 import { Flex, Spin, Alert } from 'antd'
 import { fetchSingleArticle } from '../../app/API-services/fetchSingleArticle'
 import ArticleItem from '../../components/ArticleItem/ArticleItem'
@@ -11,6 +12,7 @@ export default function Article() {
   const [article, setArticle] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const currentUser = useSelector((state) => state.users.username)
 
   useEffect(() => {
     const load = async () => {
@@ -48,6 +50,7 @@ export default function Article() {
       {!loading && !error && article && (
         <div className={cls.single_article_container}>
           <ArticleItem
+            slug={article.slug}
             title={article.title}
             body={article.body}
             description={article.description}
@@ -56,6 +59,7 @@ export default function Article() {
             createdAt={article.createdAt}
             author={article.author}
             full
+            currentUser={currentUser}
           />
         </div>
       )}

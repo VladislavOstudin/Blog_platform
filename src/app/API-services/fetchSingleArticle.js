@@ -1,10 +1,8 @@
-import axios from 'axios'
-
-const API_BASE_URL = 'https://blog-platform.kata.academy/api'
+import apiClient from './apiClient'
 
 export const fetchSingleArticle = async (slug) => {
   try {
-    const response = await axios.get(`${API_BASE_URL}/articles/${slug}`)
+    const response = await apiClient.get(`/articles/${slug}`)
     return response.data.article
   } catch (err) {
     throw new Error('Ошибка при получении статьи')

@@ -32,7 +32,9 @@ export default function Header() {
           </>
         ) : (
           <>
-            <button className={cls.create_article}>Create article</button>
+            <Link to={`/new-article`}>
+              <button className={cls.create_article}>Create article</button>
+            </Link>
             <div className={cls.user}>
               <Link to={`/profile`}>
                 <span className={cls.user_name}>{username}</span>

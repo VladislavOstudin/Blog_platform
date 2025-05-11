@@ -108,3 +108,37 @@
     border-radius: 50%;
     object-fit: cover;
 }
+
+.delete_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 32px;
+    font-size: 1em;
+    color: #F5222D;
+    border: 1px solid #F5222D;
+    border-radius: 5px;
+}
+
+.edit_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65px;
+    height: 32px;
+    font-size: 1em;
+    color: #52C41A;
+    border: 1px solid #52C41A;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.button_block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    position: absolute;
+    top: 70px;
+}

@@ -5,13 +5,15 @@ import { setUser, logOut } from '../../app/usersReducer'
 
 import cls from './App.module.scss'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import Header from '../Header/Header'
 
+import Header from '../Header/Header'
 import ArticlesList from '../../pages/ArticlesList/ArticlesList'
 import Article from '../../pages/Article/Article'
 import SignInForm from '../../pages/SignInForm/SignInForm'
 import SignUpForm from '../../pages/SignUpForm/SignUpForm'
 import EditProfile from '../../pages/EditProfile/EditProfile'
+import CreateArticle from '../../pages/CreateArticle/CreateArticle'
+import PrivateRoute from '../../features/PrivateRoute'
 
 export default function App() {
   const dispatch = useDispatch()
@@ -46,6 +48,22 @@ export default function App() {
             <Route path="/sign-in" element={<SignInForm />} />
             <Route path="/sign-up" element={<SignUpForm />} />
             <Route path="/profile" element={<EditProfile />} />
+            <Route
+              path="/new-article"
+              element={
+                <PrivateRoute>
+                  <CreateArticle mode="create" />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/articles/:slug/edit"
+              element={
+                <PrivateRoute>
+                  <CreateArticle mode="edit" />
+                </PrivateRoute>
+              }
+            />
           </Routes>
         </main>
       </div>

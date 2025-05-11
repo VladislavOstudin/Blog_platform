@@ -87,9 +87,10 @@ const EditProfile = () => {
   return (
     <div className={cls.edit_profile_container}>
       {loading && (
-        <Spin size="middle">
+        <Flex align="center" gap="middle">
+          <Spin size="middle" />
           <p>Loading...</p>
-        </Spin>
+        </Flex>
       )}
       <h2>Edit Profile</h2>
       <form className={cls.input_container} onSubmit={handleSubmit(onSubmit)}>
