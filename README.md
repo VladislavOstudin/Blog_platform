@@ -1,1 +1,1 @@
-Ссылка на приложение: [Blog](https://github.com/VladislavOstudin/Blog_platform/tree/main)
+Ссылка на приложение: [Blog](https://blog-platform-pi-lac.vercel.app/)
