@@ -56,6 +56,7 @@ export default function Article() {
             description={article.description}
             tagList={article.tagList}
             favoritesCount={article.favoritesCount}
+            favorited={article.favorited}
             createdAt={article.createdAt}
             author={article.author}
             full

@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux'
 import { deleteArticleThunk } from '../../app/API-services/fetchCreateArticle'
 
 import defaultAvatar from '../../assets/Rectangle.svg'
-import likeIcon from '../../assets/like.svg'
+import LikeButton from '../LikeButton/LikeButton'
 
 import cls from './ArticleItem.module.scss'
 import './Popconfirm.scss'
@@ -18,6 +18,7 @@ export default function ArticleItem({
   body,
   tagList,
   favoritesCount,
+  favorited,
   createdAt,
   author,
   full = false,
@@ -45,72 +46,66 @@ export default function ArticleItem({
   }
 
   return (
-    <div className={cls.shadow_wrapper}>
-      <section
-        className={
-          !full ? `${cls.article_list_item} ${cls.article_for_list}` : `${cls.article_list_item} ${cls.article_single}`
-        }
-      >
-        <div className={cls.main_info}>
-          <div className={cls.title_container}>
-            {!full ? (
-              <Link to={`/articles/${slug}`} className={cls.title_link}>
-                {title}
-              </Link>
-            ) : (
-              <div className={cls.title_link}>{title}</div>
-            )}
-
-            <button className={cls.like}>
-              <img src={likeIcon} alt="like" />
-            </button>
-            <span className={cls.like_value}>{favoritesCount}</span>
-          </div>
-          <div className={cls.tags}>
-            {tagList?.map((tag, index) => (
-              <span key={`${tag}-${index}`} className={cls.tag}>
-                {tag}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <p className={cls.description}>{limiterOverview(description, 145)}</p>
-
-        {full && body && (
-          <>
-            <div className={cls.body}>
-              <ReactMarkdown>{body}</ReactMarkdown>
-            </div>
-          </>
-        )}
-
-        <div className={cls.author_container}>
-          <div className={cls.author_info}>
-            <span className={cls.author_name}>{author?.username}</span>
-            <span className={cls.author_bd}>{format(new Date(createdAt), 'MMMM d, yyyy')}</span>
-          </div>
-          <img className={cls.author_photo} src={author?.image || defaultAvatar} alt="author" />
-          {currentUser === author.username && (
-            <div className={cls.button_block}>
-              <Popconfirm
-                title="Are you sure to delete this article?"
-                onConfirm={handleDelete}
-                placement="right"
-                okText="Yes"
-                cancelText="No"
-                className="custom-popconfirm"
-              >
-                <button className={cls.delete_button}>Delete</button>
-              </Popconfirm>
-
-              <Link to={`/articles/${slug}/edit`} className={cls.edit_button}>
-                Edit
-              </Link>
-            </div>
+    <section
+      className={
+        !full ? `${cls.article_list_item} ${cls.article_for_list}` : `${cls.article_list_item} ${cls.article_single}`
+      }
+    >
+      <div className={cls.main_info}>
+        <div className={cls.title_container}>
+          {!full ? (
+            <Link to={`/articles/${slug}`} className={cls.title_link}>
+              {title}
+            </Link>
+          ) : (
+            <div className={cls.title_link}>{title}</div>
           )}
+          <LikeButton slug={slug} count={favoritesCount} liked={favorited} />
         </div>
-      </section>
-    </div>
+        <div className={cls.tags}>
+          {tagList?.map((tag, index) => (
+            <span key={`${tag}-${index}`} className={cls.tag}>
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <p className={cls.description}>{limiterOverview(description, 145)}</p>
+
+      {full && body && (
+        <>
+          <div className={cls.body}>
+            <ReactMarkdown>{body}</ReactMarkdown>
+          </div>
+        </>
+      )}
+
+      <div className={cls.author_container}>
+        <div className={cls.author_info}>
+          <span className={cls.author_name}>{author?.username}</span>
+          <span className={cls.author_bd}>{format(new Date(createdAt), 'MMMM d, yyyy')}</span>
+        </div>
+        <img className={cls.author_photo} src={author?.image || defaultAvatar} alt="avatar" />
+        {currentUser === author.username && (
+          <div className={cls.button_block}>
+            <Popconfirm
+              title="Are you sure to delete this article?"
+              onConfirm={handleDelete}
+              placement="right"
+              okText="Yes"
+              cancelText="No"
+              className="custom-popconfirm"
+            >
+              <button className={cls.delete_button}>Delete</button>
+            </Popconfirm>
+
+            <Link to={`/articles/${slug}/edit`} className={cls.edit_button}>
+              Edit
+            </Link>
+          </div>
+        )}
+      </div>
+    </section>
   )
 }

@@ -11,7 +11,7 @@
 }
 
 .article_for_list {
-    height: 150px;
+    min-height: 150px;
     border-radius: 10px;
 }
 
@@ -27,6 +27,7 @@
 }
 
 .title_container {
+    width: 650px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -39,20 +40,12 @@
     font-weight: 400;
 }
 
-.like {
-    width: 16px;
-    height: 16px;
-}
-
-.like_value {
-    font-size: 1.05em;
-    color: rgba($color: #000000, $alpha: 0.75);
-}
-
 .tags {
+    width: 650px;
     display: flex;
     flex-direction: row;
     align-items: center;
+    flex-wrap: wrap;
     gap: 5px;
     color: rgba($color: #000000, $alpha: 0.75);
 }
@@ -107,6 +100,7 @@
     height: 46px;
     border-radius: 50%;
     object-fit: cover;
+    font-size: 0.75em;
 }
 
 .delete_button {
@@ -121,6 +115,10 @@
     border-radius: 5px;
 }
 
+.delete_button:hover {
+    opacity: 0.5;
+}
+
 .edit_button {
     display: flex;
     align-items: center;
@@ -132,6 +130,10 @@
     border: 1px solid #52C41A;
     border-radius: 5px;
     text-decoration: none;
+}
+
+.edit_button:hover {
+    opacity: 0.5;
 }
 
 .button_block {
